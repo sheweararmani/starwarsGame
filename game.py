@@ -201,8 +201,58 @@ def move(exits, direction):
     return locations[exits[direction]]
 
 
+def ready_to_play():
+    print(r"            _________  ___  _____                                        ")
+    print(r"           / __   __| / _ \ |  _ \                                       ")
+    print(r"     ______> \ | |   |  _  ||    /_____________________________          ")
+    print(r"    / _______/ |_|   |_| |_||_|\______________________________ \         ")
+    print(r"   / /                                                        \ \        ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                  Press Enter to Play                     | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"  | |                                                          | |       ")
+    print(r"   \ \____________________________    _   ___   ____   _______/ /        ")
+    print(r"    \___________________________  |  | | / _ \ |  _ \ / _______/         ")
+    print(r"                                | |/\| ||  _  ||    / > \                ")
+    print(r"                                 \_/\_/ |_| |_||_|\_\|__/                ")
+    input()
+    
 # Allow the player to choose a character.
 def choose_character():
+    global inventory, max_mass, current_location, max_health, health
+
+    print(r" ________________________     _________________________ ")
+    print(r"|        .......         |   |      .x%%%%%%x.         |")
+    print(r"|      ::::::;;::.       |   |     ,%%%%%%%%%%%        |")
+    print(r"|    .::;::::;::::.      |   |    ,%%%'  )'  \%        |")
+    print(r"|   .::::::::::::::      |   |   ,%x%) __   _ Y        |")
+    print(r"|   ::`_```_```;:::.     |   |   :%%% ~=-. <=~|        |")
+    print(r"|   ::=-) :=-`  ::::     |   |   :%%::. .:,\  |        |")
+    print(r"| `::|  / :     `:::     |   |   `;%:`\. `-' .'        |")
+    print(r"|   '|  `~'     ;:::     |   |    ``x`. -===-;         |")
+    print(r"|    :-:==-.   / :'      |   |     / `:`.__.;          |")
+    print(r"|    `. _    .'.d8:      |   |  .d8b.  :: ..`.         |")
+    print(r"| _.  |88bood88888._     |   | d88888b.  '  /8         |")
+    print(r"|~  `-+8888888888P  `-. _|   |d888888888b. ( 8b       /|")
+    print(r"|-'     ~~^^^^~~  `./8 ~ |   |~   ~`888888b  `8b     /:|")
+    print(r"|8b /  /  |   \  \  `8   |   |  ' ' `888888   `8. _ /:/|")
+    print(r"|P        `          8   |   |'      )88888b   8b |):X |")
+    print(r"|                    8b  |   |   ~ - |888888   `8b/:/:\|")
+    print(r"|                    `8  |   |       |888888    88\/~~;|")
+    print(r"|                     8b |   |       (888888b   88|  / |")
+    print(r"|         .           `8 |   |\       \888888   8-:   /|")
+    print(r"|________/_\___________8_|   |_\_______\88888_.'___\__/|")
+    print()
+    print(r"L u k e  S k y w a l k e r         H a n   S o l o      ")
+    print()
+    print(r" Jedi Knight, Strong with         Smuggler, Pirate      ")
+    print(r"the force, has a lightsaber     has a gun and Chewie!   ")
+
     # Ask the user who to play as, repeat as long as they give invalid input.
     choice = input("Would you like to play as Luke or Han?").lower().strip()
     while choice != "luke" and choice != "han":
@@ -218,7 +268,7 @@ def choose_character():
 # Main function
 def main():
     # Introduction (ready to play etc)
-    input("Press enter when you're ready to play")
+    ready_to_play()
 
     # Show the title sequence
     intro()

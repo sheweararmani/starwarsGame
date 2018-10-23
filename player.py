@@ -6,7 +6,7 @@ from items import *
 luke = {"inventory": [], # Luke's items.
         "max_mass": 10, # The amount Luke can carry.
         "location": location_alderaan, # The location Luke starts in.
-        "health": 100, # Luke's current health.Zz
+        "health": 100, # Luke's current health.
         "max_health": 100, # Luke's maximum health.
         "damage": 6} # Luke's damage, goes up if picks up weapons
 
