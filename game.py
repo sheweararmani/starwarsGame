@@ -1,6 +1,7 @@
 from map import locations
 from items import items
 from player import *
+from music import *
 from gameparser import normalise_input
 from time import sleep, clock
 
@@ -41,15 +42,15 @@ def print_location_items(location):
 
 
 # Print the current location
-def print_location(location):
+def print_location(player):
 
     # Introduce location
-    print("You're currently located in the " + location["name"] + "...")
+    print("You're currently located in the " + player["location"]["name"] + "...")
     # Describe location
-    print(location["description"])
+    print(player["location"]["description"])
     print()
     # Display items in location
-    print_location_items(location)
+    print_location_items(player["location"])
 
 
 # Available exits
@@ -89,29 +90,28 @@ def print_menu(exits, location_items, inv_items):
 
 # Execute Functions
 # Execute go
-def execute_go(direction):
-    global current_location
-    if is_valid_exit(direction, current_location["exits"]):
-        current_location = move(current_location["exits"], direction)
+def execute_go(player, direction):
+    if is_valid_exit(direction, player["location"]["exits"]):
+        player["location"] = move(player["location"]["exits"], direction)
     else:
         print("You cannot go there.")
 
 # Execute take
-def execute_take(item_id):
+def execute_take(player, item_id):
 
     found = False
 
-    for item in current_location["items"]:
-        if item_id == item["id"] and inventory_mass(inventory) + item["mass"] <= max_mass:
-            inventory.append(item)
-            current_location["items"].remove(item)
+    for item in player["location"]["items"]:
+        if item_id == item["id"] and inventory_mass(player["inventory"]) + item["mass"] <= player["max_mass"]:
+            player["inventory"].append(item)
+            player["location"]["items"].remove(item)
             found = True
             print(item_id, " added to inventory")
 # OPTIONAL - MASS CAPACITY FUNCTION
-        elif inventory_mass(inventory) + item["mass"] > max_mass:
+        elif inventory_mass(player["inventory"]) + item["mass"] > player["max_mass"]:
             print("You've reach your maximum mass capacity")
             # Display mass status
-            print("You're carrying" + str(inventory_mass(inventory) +
+            print("You're carrying" + str(inventory_mass(player["inventory"]) +
                   item["mass"]) + "kg, this is too much!")
             return
     # Necessary reject
@@ -120,13 +120,13 @@ def execute_take(item_id):
 
 
 # Execute drop
-def execute_drop(item_id):
+def execute_drop(player, item_id):
 
     success = False
-    for items in inventory:
+    for items in player["inventory"]:
         if item_id == items["id"]:
-            current_location["items"].append(items)
-            inventory.remove(items)
+            player["location"]["items"].append(items)
+            player["inventory"].remove(items)
             print(items["name"] + " dropped.")
             success = True
     if success == False:
@@ -134,26 +134,26 @@ def execute_drop(item_id):
 
 
 # Execute command
-def execute_command(command):
+def execute_command(player, command):
 
     if 0 == len(command):
         return
 
     if command[0] == "go":
         if len(command) > 1:
-            execute_go(command[1])
+            execute_go(player, command[1])
         else:
             print("Go where?")
 
     elif command[0] == "take":
         if len(command) > 1:
-            execute_take(command[1])
+            execute_take(player, command[1])
         else:
             print("Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
-            execute_drop(command[1])
+            execute_drop(player, command[1])
         else:
             print("Drop what?")
 
@@ -192,8 +192,8 @@ def menu(exits, location_items, inv_items):
 
 
 # Print the player's health
-def print_health():
-    print("Your current health is " + str(health) + "/" + str(max_health) + ".")
+def print_health(player):
+    print("Your current health is " + str(player["health"]) + "/" + str(player["max_health"]) + ".")
 
 
 # Move
@@ -201,19 +201,8 @@ def move(exits, direction):
     return locations[exits[direction]]
 
 
-# Show opening text
-def display_title_sequence():
-    f = open("title.txt")
-
-    # Print lines one at a time, separated with blank lines.
-    for line in f:
-        sleep(0.4)
-        print(line[:-1])  # The last character will be a newline so shouldn't be printed.
-
-
 # Allow the player to choose a character.
 def choose_character():
-    global inventory, max_mass, current_location, max_health, health
     # Ask the user who to play as, repeat as long as they give invalid input.
     choice = input("Would you like to play as Luke or Han?").lower().strip()
     while choice != "luke" and choice != "han":
@@ -221,17 +210,9 @@ def choose_character():
         choice = input("Would you like to play as Luke or Han?").lower().strip()
     
     if choice == "luke":
-        inventory = luke_inventory
-        max_mass = luke_max_mass
-        current_location = luke_start_location
-        max_health = luke_max_health
-        health = luke_max_health
-    elif choice == "han":
-        inventory = han_inventory
-        max_mass = han_max_mass
-        current_location = han_start_location
-        max_health = han_max_health
-        health = han_max_health
+        return luke
+    else:
+        return han
 
 
 # Main function
@@ -240,24 +221,24 @@ def main():
     input("Press enter when you're ready to play")
 
     # Show the title sequence
-    display_title_sequence()
+    intro()
 
     print()
 
     # Allow the user to select a character
-    choose_character()
+    player = choose_character()
 
     while True:
         # Print status
-        print_location(current_location)
-        print_health()
+        print_location(player)
+        print_health(player)
 
         # Show possible actions
-        command = menu(current_location["exits"],
-                       current_location["items"], inventory)
+        command = menu(player["location"]["exits"],
+                       player["location"]["items"], player["inventory"])
 
         # Execute the user's commands
-        execute_command(command)
+        execute_command(player, command)
 
 
 if __name__ == "__main__":

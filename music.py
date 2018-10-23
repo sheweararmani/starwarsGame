@@ -4,15 +4,18 @@ import time
 
 
               #to stop the music 
-#insound.PlaySound(None, winsound.SND_ALIAS)
+#winsound.PlaySound(None, winsound.SND_ALIAS)
 
               #to play music asynchronously
-#winsound.PlaySound("filename",  winsound.SND_ALIAS | winsound.SND_ASYNC)
+#winsound.PlaySound("filename", winsound.SND_ALIAS | winsound.SND_ASYNC)
+
+              #to play music in a loop
+#winsound.PlaySound("filename", winsound.SND_ALIAS | winsound.SND_ASYNC | winsound.SND_LOOP)
 
 
 def intro():
     winsound.PlaySound('Title music.wav', winsound.SND_ALIAS | winsound.SND_ASYNC)
-    for i in range(100):
+    for _ in range(100):
         print("")
     time.sleep(1)
     string = "  STAR WARS "
@@ -30,8 +33,6 @@ def intro():
     string = "PICK A CHARACTER, BUT BE WARNED, A DARK PATH LIES AHEAD."
     print(string.center(70))
     print()
-    for i in range(36):
+    for _ in range(36):
         time.sleep(0.5)
         print("")
-
-intro()
