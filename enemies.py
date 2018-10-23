@@ -12,10 +12,10 @@ greedo = { "name": "Greedo",
            "description":"Who shot first?",
            "health":50,
            "damage":20,
-           "items":"password"
+           "items":["password"]
            }
 
-Darth_Kirill = { "name" : "Darth Kirill",
+darth_kirill = { "name" : "Darth Kirill",
                  "description": "He is your lecturer.",
                  "health" : 100,
                  "damage": 100,
