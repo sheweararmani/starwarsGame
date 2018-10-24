@@ -1,4 +1,4 @@
-import winsound
+from sound import winsound
 import time
               #to play the music
 
@@ -20,18 +20,27 @@ def intro():
     time.sleep(1)
     string = "  STAR WARS "
     print(string.center(70, '*'))
+    time.sleep(0.5)
     print()
+    time.sleep(0.5)
     string = "THERE HAVE BEEN REPORTS THAT PRINCESS LEIA"
     print(string.center(70))
+    time.sleep(0.5)
     print()
+    time.sleep(0.5)
     string = "HAS BEEN CAPTURED BY THE GALACTIC EMPIRE"
     print(string.center(70))
+    time.sleep(0.5)
     print()
+    time.sleep(0.5)
     string = "IT IS UP TO YOU TO SAVE HER"
     print(string.center(70))
+    time.sleep(0.5)
     print()
+    time.sleep(0.5)
     string = "PICK A CHARACTER, BUT BE WARNED, A DARK PATH LIES AHEAD."
     print(string.center(70))
+    time.sleep(0.5)
     print()
     for _ in range(36):
         time.sleep(0.5)
