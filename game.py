@@ -2,6 +2,7 @@ from map import locations
 from items import items
 from player import *
 from music import *
+from equip import *
 from gameparser import normalise_input
 from time import sleep, clock
 
@@ -161,7 +162,7 @@ def execute_command(player, command):
     
     elif command[0] == "equip" and len(player["inventory"]) != 0:
         newDamage = None
-        while newDamage = None:
+        while newDamage == None:
             newDamage = equip()
         player["damage"] = newDamage
 
