@@ -83,7 +83,7 @@ item_blaster = {
         }
 
 items = {
-    "lighsaber": item_lightsaber,
+    "lightsaber": item_lightsaber,
     "powerconverter": item_pc,
     "landspeeder": item_landspeeder,
     "r2d2": item_r2d2,
