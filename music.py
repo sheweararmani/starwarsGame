@@ -14,7 +14,7 @@ import time
 
 
 def intro():
-    winsound.PlaySound('Title music.wav', winsound.SND_ALIAS | winsound.SND_ASYNC)
+    winsound.PlaySound('titlemusic.wav', winsound.SND_ALIAS | winsound.SND_ASYNC)
     for _ in range(100):
         print("")
     time.sleep(1)
