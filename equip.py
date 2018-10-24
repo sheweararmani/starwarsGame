@@ -1,19 +1,24 @@
 from player import *
 from items import *
-
+from gameparser import *
 
 #function returns weapon if it is valid
 
 def equip():
-    templist = []
-    print("Select your weapon:")
-    for i in luke["inventory"]: #check to see if it is in the list
-        citem = i["name"].lower()
-        templist.append(citem)
-    print(templist)
-    while True: #loop so if the input is invalid they can try again
-        weapon = input("Enter the weapon you want to equip: ").lower()
-        if weapon in templist:
-            return weapon
-        else:
-            print("Enter a valid weapon.")
+    if luke["inventory"] == []:
+        print("Cant equip anything.")
+        return None #if nothing in inventory returns none
+    running = True
+    while running == True:
+        print("Select your weapon:")
+        for i in luke["inventory"]:
+            print(i["name"]) #prints available inventory
+        weapon = input("Enter the weapon you want to equip: ")
+        weapon = normalise_input(weapon) #normalise player input
+        weapon = weapon[0] #gains string from the normalised input
+        for i in luke["inventory"]: #checks the inventory if valid
+            if weapon == i["name"].lower():
+                running = False
+                return i #returns the id of the weapon
+            else:
+                print("not a valid entry")
