@@ -1,8 +1,6 @@
 # TODO: Add skip_words list
 from string import ascii_lowercase
 
-
-
 skip_words = []
 
 def normalise_input(input):
