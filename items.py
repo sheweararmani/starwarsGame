@@ -7,6 +7,8 @@ item_lightsaber = {
     "________________",
 
     "damage": 15
+
+    "mass": 1
 }
 
 item_powerconverter = {
@@ -18,6 +20,8 @@ item_powerconverter = {
     "________________",
 
     "damage": 0
+
+    "mass": 1
 }
 
 item_landspeeder = {
@@ -29,6 +33,8 @@ item_landspeeder = {
     "________________",
 
     "damage": 0
+
+    "mass": 1
 }
 
 item_r2d2 = {
@@ -49,6 +55,8 @@ item_handgun = {
     "description": "________________",
 
     "damage": 5
+
+    "mass": 1
     
 }
 
@@ -60,6 +68,8 @@ item_chewie = {
     "description": "________________",
 
     "damage": 0
+
+    "mass": 0
 }
 
 item_leia = {
@@ -70,6 +80,8 @@ item_leia = {
 	"description": "________________",
 
         "damage": 0
+
+        "mass" : 0
         }
 
 item_blaster = {
@@ -80,6 +92,8 @@ item_blaster = {
         "description": "Standard issue blaster rifle.",
 
         "damage": 10
+
+        "mass":2
         }
 
 item_key = {
@@ -90,6 +104,8 @@ item_key = {
     "description": "The key to N/4.07.",
 
     "damage": 2
+
+    "mass":0
 }
 
 items = {
