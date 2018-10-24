@@ -84,7 +84,7 @@ def print_menu(exits, location_items, inv_items):
         print("TAKE " + item["id"].upper() + " to take " + item["name"] + ".")
     for item in inv_items:
         print("DROP " + item["id"].upper() + " to drop " + item["name"] + ".")
-    for inv_items != []:
+    if inv_items != []:
         print("EQUIP")
 
     print("What do you want to do?")
@@ -160,7 +160,10 @@ def execute_command(player, command):
             print("Drop what?")
     
     elif command[0] == "equip" and len(player["inventory"]) != 0:
-        player["damage"] = equip()["damage"]
+        newDamage = None
+        while newDamage = None:
+            newDamage = equip()
+        player["damage"] = newDamage
 
     else:
         print("This makes no sense.")
@@ -302,7 +305,7 @@ def main():
         # Execute the user's commands
         execute_command(player, command)
 
-    
+    print("Well done, you saved Leia!")
 
 
 if __name__ == "__main__":
