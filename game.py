@@ -8,18 +8,39 @@ from time import sleep, clock
 
 
 # Take timed input, timed in seconds.
-def input_fast_enough(prompt, correct_input, max_time):
+def fight(max_time,enemy):
     # Record the time before and after the user types their input.
+    print("Enemy: {}".format(enemy["name"]))
+    print("You have {} seconds to take {} out.".format(max_time,enemy))
+    sleep(1)
+    print("Enter the next word quickly!:")
+    sleep(0.5)
+    print(".")
+    sleep(0.5)
+    print(".")
+    sleep(0.5)
+    print(".")
+    sleep(0.5)
+    print("Fight!")
     start_time = clock()
-    user_input = input(correct_input)
     end_time = clock()
-
-    # Return True if they were fast enough and gave the correct input.
+    # Check if they were fast enough and gave the correct input.
     time_taken = end_time - start_time
-    if user_input == correct_input and time_taken <= max_time:
-        return True
-    else:
-        return False
+    while True:
+        killwords = enemy["killwords"]
+        correct = random.choice(killwords)
+        user_input = input(correct + "\n")
+        if user_input == correct and time_taken <= max_time:
+            enemy["health"] = enemy["health"] - luke["damage"]
+            print(enemy["health"])
+            if enemy["health"] <= 0:
+                return True
+        else:
+            luke["health"] = luke["health"] - enemy["damage"]
+            print(luke["health"])
+            if luke["health"] <= 0:
+                print("Luke has been killed!")
+                exit
 
 
 # Items in inventory
@@ -209,7 +230,14 @@ def print_health(player):
 def move(exits, direction):
     return locations[exits[direction]]
 
-
+def deathstar():
+    if player["location"] == location_deathstar:
+        print("Storm troopers wait for you once you arrive to the ship, take them out!")
+        fight(5,stormtrooper)
+        fight(5,stormtrooper)
+        fight(3,stormtrooper)
+        
+        
 # Display starwars ascii and wait for input.
 def ready_to_play():
     print(r"            _________  ___  _____                                        ")
