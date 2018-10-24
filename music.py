@@ -1,8 +1,5 @@
 from sound import play_music
 import time
-              #to play the music
-
-
               #to stop the music 
 #stop_music()
 
