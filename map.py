@@ -1,4 +1,4 @@
-from items import
+from items import *
 location_landspeeder = {
     "name": "Landspeeder",
 
@@ -15,7 +15,7 @@ location_toschestation = {
     "description":
     """You have travelled to Tosche station. The shop seems top sell power converters...""",
 
-    "items": [item_powerconverters]
+    "items": [item_powerconverters],
 
     "exits":  {"west": "Farm"},
 
@@ -63,7 +63,7 @@ location_bar = {
 }
 
 location_tiefighter = {
-    "name": "TIE Fighter"
+    "name": "TIE Fighter",
 
     "description":
     """The TIE Fighter is very advanced with the newest technology, as expected of Darth Vader's equipment""",
@@ -74,7 +74,7 @@ location_tiefighter = {
 }
 
 location_deathstar = {
-    "name": "Death Star"
+    "name": "Death Star",
 
     "description":
     """The Death Star is a large, brightly-lit ship""",
@@ -86,21 +86,21 @@ location_deathstar = {
 }
 
 location_leiascell = {
-    "name": "Leia's Cell"
+    "name": "Leia's Cell",
 
     "description":
-    """Leia's cell. Just an average jail cell"""
+    """Leia's cell. Just an average jail cell""",
 
     "exits": {"west": "Death Star"}
 }
 
 location_n/4.07 = {
-    "name": "N/4.07"
+    "name": "N/4.07",
 
     "description":
-    """A place where good people go to die"""
+    """A place where good people go to die""",
     
-    "items": [item_key]
+    "items": [item_key],
 
 
 
@@ -116,7 +116,7 @@ locations = {
     "Booth": location_booth,
     "Bar": location_bar,
     "TIE Fighter": location_tiefighter,
-    "Death Star": location_deathstar
-    "Leia's Cell": location_leiascell
+    "Death Star": location_deathstar,
+    "Leia's Cell": location_leiascell,
     "N/4.07": location_n/4.07
 }
