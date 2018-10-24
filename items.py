@@ -4,7 +4,7 @@ item_lightsaber = {
     "name": "Lightsaber",
 
     "description":
-    "________________",
+    "This is the weapon of a Jedi Knight. Not as clumsy or random as a blaster. An elegant weapon for a more civilized age - ObiWan",
 
     "damage": 15,
 
@@ -17,7 +17,7 @@ item_powerconverter = {
     "name": "Power Converter",
 
     "description":
-    "________________",
+    "This are the part you've been looking for!",
 
     "damage": 0,
 
@@ -30,7 +30,7 @@ item_landspeeder = {
     "name": "Landspeeder",
 
     "description":
-    "________________",
+    "Fast enough to take you to Cantina",
 
     "damage": 0,
 
@@ -42,7 +42,7 @@ item_r2d2 = {
 
     "name": "R2D2",
 
-    "description": "________________",
+    "description": "Overweight glob of grease - C3PO",
 
     "damage": 0,
 
@@ -54,7 +54,7 @@ item_handgun = {
     
     "name": "Blaster Pistol",
 
-    "description": "________________",
+    "description": "Hokey religions and ancient weapons are no match for a good blaster at your side - Han Solo",
 
     "damage": 5,
 
@@ -66,7 +66,7 @@ item_chewie = {
 
     "name": "Chewbacca",
 
-    "description": "________________",
+    "description": "Legendary wookie. Period.",
 
     "damage": 0,
 
@@ -78,7 +78,7 @@ item_leia = {
 
 	"name": "Princess Leia",
 
-	"description": "________________",
+	"description": "The princess you need to win the game for",
 
     "damage": 0,
 
