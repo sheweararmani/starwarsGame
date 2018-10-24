@@ -4,7 +4,8 @@ location_landspeeder = {
     "name": "Landspeeder",
 
     "description":
-    """You have found a very aged Landspeeder. It needs power converters to fly""",
+    """You have found a very aged Landspeeder, buried in the warm sand. It is rough and course, and keeps getting everywhere. 
+    It needs power converters to fly. You remember your uncle telling you that they sell power converters at the local Tosche Station.""",
     
     "items": [],
 
@@ -15,7 +16,8 @@ location_toschestation = {
     "name": "Tosche Station",
 
     "description":
-    """You have travelled to Tosche station. The shop seems top sell power converters...""",
+    """You have travelled to Tosche station. You take a goosey gander through the window, only to find...Huzzah! Power Converters!
+    It seems that the station has been abandoned however, so it would be wise to steal them in these financially bleak times...""",
 
     "items": [item_powerconverter],
 
@@ -26,7 +28,7 @@ location_cantina = {
     "name": "Cantina",
 
     "description":
-    """You have arrived at the Cantina. The place is lively and the band is jazzy""",
+    """You are at the Cantina. The place is lively and the band is jazzy. To the west, you see a comfy booth.""",
     
     "items": [],
 
@@ -37,7 +39,8 @@ location_booth = {
     "name": "Booth",
 
     "description":
-    """You have entered a nearby booth""",
+    """You have entered a nearby booth. You feel safe from the menacing atmosphere of the bar. To the east of you is the centre of the centre 
+    of the Cantina.""",
     
     "items": [],
 
@@ -48,7 +51,8 @@ location_farm = {
     "name": "Farm",
 
     "description":
-    """The farm is desolate. The harvest hasn't been great this year""",
+    """The farm is desolate. The harvest hasn't been great this year. The dried soil 
+    crunches beneath your feet. The hot sun beats down on you.""",
     
     "items": [],
 
@@ -60,7 +64,8 @@ location_bar = {
     "name": "Bar",
 
     "description":
-    """The bar is oddly sticky and crowded""",
+    """The bar is oddly sticky and crowded. There are many frightening goons about, most you recognise to be dealy bounty
+    hunters.""",
     
     "items": [],
 
@@ -72,7 +77,9 @@ location_tiefighter = {
     "name": "TIE Fighter",
 
     "description":
-    """The TIE Fighter is very advanced with the newest technology, as expected of Darth Vader's equipment""",
+    """The TIE Fighter is very advanced with the newest technology, as expected of Darth Vader's equipment.
+    The cabin smells of strong a tobacco. The vast open space ahead is intimidating, even for experienced
+    pilots.""",
     
     "items": [],
     
@@ -83,7 +90,8 @@ location_deathstar = {
     "name": "Death Star",
 
     "description":
-    """The Death Star is a large, brightly-lit ship""",
+    """The Death Star is a large, brightly-lit ship. You can hear the faint noise of Stromtroopers marching in the distance.
+    You are very tense as you are about to approach your final battle.""",
     
     "items": [],
 
@@ -94,7 +102,8 @@ location_leiascell = {
     "name": "Leia's Cell",
 
     "description":
-    """Leia's cell. Just an average jail cell""",
+    """Leia's cell, you can see her through the window. She looks back at you in relief and rushes
+    to the door.""",
     
     "items": [],
 
