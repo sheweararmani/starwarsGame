@@ -95,7 +95,7 @@ location_deathstar = {
     
     "items": [],
 
-    "exits": {"north": "N/4.07", "south": "TIE Fighter", "east": "Leias Cell"}
+    "exits": {"south": "N/4.07", "north": "TIE Fighter", "east": "Leias Cell"}
 }
 
 location_leiascell = {
