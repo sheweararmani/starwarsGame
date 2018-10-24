@@ -36,4 +36,4 @@ def fight(max_time,enemy):
             if luke["health"] <= 0:
                 return False
 
-fight(3,darth_kirill) 
+
