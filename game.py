@@ -32,12 +32,12 @@ def fight(max_time,enemy,player):
         user_input = input(correct + "\n")
         if user_input == correct and time_taken <= max_time:
             enemy["health"] = enemy["health"] - player["damage"]
-            print(enemy["health"])
+            print("You hit the enemy and dealt: {} damage points".format(player["damage"]))
             if enemy["health"] <= 0:
                 return True
         else:
             player["health"] = player["health"] - enemy["damage"]
-            print(player["health"])
+            print("The enemy hit you and dealt {} damage points".format(enemy["damage"]))
             if player["health"] <= 0:
                 print("Luke has been killed!")
                 exit
