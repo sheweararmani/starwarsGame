@@ -84,6 +84,8 @@ def print_menu(exits, location_items, inv_items):
         print("TAKE " + item["id"].upper() + " to take " + item["name"] + ".")
     for item in inv_items:
         print("DROP " + item["id"].upper() + " to drop " + item["name"] + ".")
+    for inv_items != []:
+        print("EQUIP")
 
     print("What do you want to do?")
 
@@ -156,6 +158,9 @@ def execute_command(player, command):
             execute_drop(player, command[1])
         else:
             print("Drop what?")
+    
+    elif command[0] == "equip" and len(player["inventory"]) != 0:
+        player["damage"] = equip()["damage"]
 
     else:
         print("This makes no sense.")
@@ -201,6 +206,7 @@ def move(exits, direction):
     return locations[exits[direction]]
 
 
+# Display starwars ascii and wait for input.
 def ready_to_play():
     print(r"            _________  ___  _____                                        ")
     print(r"           / __   __| / _ \ |  _ \                                       ")
@@ -221,7 +227,8 @@ def ready_to_play():
     print(r"                                | |/\| ||  _  ||    / > \                ")
     print(r"                                 \_/\_/ |_| |_||_|\_\|__/                ")
     input()
-    
+
+
 # Allow the player to choose a character.
 def choose_character():
     global inventory, max_mass, current_location, max_health, health
@@ -265,6 +272,11 @@ def choose_character():
         return han
 
 
+# Check if the player has won.
+def has_won(player):
+    return item_leia in player["inventory"]
+
+
 # Main function
 def main():
     # Introduction (ready to play etc)
@@ -278,7 +290,7 @@ def main():
     # Allow the user to select a character
     player = choose_character()
 
-    while True:
+    while not has_won(player):
         # Print status
         print_location(player)
         print_health(player)
@@ -289,6 +301,8 @@ def main():
 
         # Execute the user's commands
         execute_command(player, command)
+
+    
 
 
 if __name__ == "__main__":
