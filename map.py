@@ -1,72 +1,64 @@
+# Add "items": [item_a, item_b, ...]
+# Add "description": "this is the description."
+
 location_landspeeder = {
     "name": "Landspeeder",
 
-    "exits": {"north": "Farm"},
-
+    "exits": {"north": "Farm"}
 }
 
 location_toschestation = {
     "name": "Tosche Station",
 
-    "exits":  {"west": "Farm"},
-
-    
+    "exits":  {"west": "Farm"}
 }
 
 location_cantina = {
     "name": "Cantina",
 
-    "exits": {"east": "Farm", "west": "booth", "north": "bar", "south": "TIE Fighter" },
-
+    "exits": {"east": "Farm", "west": "booth", "north": "bar", "south": "TIE Fighter" }
 }
 
 location_booth = {
     "name": "Booth",
 
-    "exits": {"east": "Cantina"},
-
+    "exits": {"east": "Cantina"}
 }
 
 location_farm = {
     "name": "Farm",
 
-    "exits": {"west": "Cantina", "south": "Landspeeder", "east": "Tosche Station"},
-
+    "exits": {"west": "Cantina", "south": "Landspeeder", "east": "Tosche Station"}
 }
 
 location_bar = {
     "name": "Bar",
 
     "exits": {"south": "Cantina"}
-
 }
 
 location_tiefighter = {
-    "name": "TIE Fighter"
+    "name": "TIE Fighter",
     
     "exits": {"north": "Cantina", "south": "Death Star"}
-
 }
 
 location_deathstar = {
-    "name": "Death Star"
+    "name": "Death Star",
 
     "exits": {"north": "N/4.07", "south": "TIE Fighter", "east": "Leias Cell"}
-
-
 }
 
 location_leiascell = {
-    "name": "Leia's Cell"
+    "name": "Leia's Cell",
 
     "exits": {"west": "Death Star"}
 }
 
-location_n/4.07 = {
-    "name": "N/4.07"
+location_n_4_07 = {
+    "name": "N/4.07",
 
     "exits": {"south": "Death Star"}
-
 }
 
 locations = {
@@ -77,7 +69,7 @@ locations = {
     "Booth": location_booth,
     "Bar": location_bar,
     "TIE Fighter": location_tiefighter,
-    "Death Star": location_deathstar
-    "Leia's Cell": location_leiascell
-    "N/4.07": location_n/4.07
+    "Death Star": location_deathstar,
+    "Leia's Cell": location_leiascell,
+    "N/4.07": location_n_4_07
 }
