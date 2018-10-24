@@ -1,20 +1,17 @@
-from sound import winsound
+from sound import play_music
 import time
               #to play the music
 
 
               #to stop the music 
-#winsound.PlaySound(None, winsound.SND_ALIAS)
+#stop_music()
 
               #to play music asynchronously
-#winsound.PlaySound("filename", winsound.SND_ALIAS | winsound.SND_ASYNC)
-
-              #to play music in a loop
-#winsound.PlaySound("filename", winsound.SND_ALIAS | winsound.SND_ASYNC | winsound.SND_LOOP)
+#play_music("filename")
 
 
 def intro():
-    winsound.PlaySound('titlemusic.wav', winsound.SND_ALIAS | winsound.SND_ASYNC)
+    play_music('titlemusic.wav')
     for _ in range(100):
         print("")
     time.sleep(1)
