@@ -1,12 +1,14 @@
 from items import *
+
 location_landspeeder = {
     "name": "Landspeeder",
 
     "description":
     """You have found a very aged Landspeeder. It needs power converters to fly""",
+    
+    "items": [],
 
     "exits": {"north": "Farm"},
-
 }
 
 location_toschestation = {
@@ -15,11 +17,9 @@ location_toschestation = {
     "description":
     """You have travelled to Tosche station. The shop seems top sell power converters...""",
 
-    "items": [item_powerconverters],
+    "items": [item_powerconverter],
 
     "exits":  {"west": "Farm"},
-
-    
 }
 
 location_cantina = {
@@ -27,9 +27,10 @@ location_cantina = {
 
     "description":
     """You have arrived at the Cantina. The place is lively and the band is jazzy""",
+    
+    "items": [],
 
     "exits": {"east": "Farm", "west": "booth", "north": "bar", "south": "TIE Fighter" },
-
 }
 
 location_booth = {
@@ -37,9 +38,10 @@ location_booth = {
 
     "description":
     """You have entered a nearby booth""",
+    
+    "items": [],
 
     "exits": {"east": "Cantina"},
-
 }
 
 location_farm = {
@@ -47,6 +49,8 @@ location_farm = {
 
     "description":
     """The farm is desolate. The harvest hasn't been great this year""",
+    
+    "items": [],
 
     "exits": {"west": "Cantina", "south": "Landspeeder", "east": "Tosche Station"},
 
@@ -57,6 +61,8 @@ location_bar = {
 
     "description":
     """The bar is oddly sticky and crowded""",
+    
+    "items": [],
 
     "exits": {"south": "Cantina"}
 
@@ -67,10 +73,10 @@ location_tiefighter = {
 
     "description":
     """The TIE Fighter is very advanced with the newest technology, as expected of Darth Vader's equipment""",
-
+    
+    "items": [],
     
     "exits": {"north": "Cantina", "south": "Death Star"}
-
 }
 
 location_deathstar = {
@@ -78,11 +84,10 @@ location_deathstar = {
 
     "description":
     """The Death Star is a large, brightly-lit ship""",
-
+    
+    "items": [],
 
     "exits": {"north": "N/4.07", "south": "TIE Fighter", "east": "Leias Cell"}
-
-
 }
 
 location_leiascell = {
@@ -90,11 +95,13 @@ location_leiascell = {
 
     "description":
     """Leia's cell. Just an average jail cell""",
+    
+    "items": [],
 
     "exits": {"west": "Death Star"}
 }
 
-location_n/4.07 = {
+location_n_4_07 = {
     "name": "N/4.07",
 
     "description":
@@ -102,10 +109,7 @@ location_n/4.07 = {
     
     "items": [item_key],
 
-
-
     "exits": {"south": "Death Star"}
-
 }
 
 locations = {
@@ -118,5 +122,5 @@ locations = {
     "TIE Fighter": location_tiefighter,
     "Death Star": location_deathstar,
     "Leia's Cell": location_leiascell,
-    "N/4.07": location_n/4.07
+    "N/4.07": location_n_4_07
 }

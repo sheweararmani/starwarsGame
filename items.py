@@ -9,7 +9,7 @@ item_lightsaber = {
     "damage": 15
 }
 
-item_pc = {
+item_powerconverter = {
     "id": "powerconverter",
 
     "name": "Power Converter",
@@ -82,9 +82,19 @@ item_blaster = {
         "damage": 10
         }
 
+item_key = {
+    "id": "key",
+    
+    "name": "Key",
+
+    "description": "The key to N/4.07.",
+
+    "damage": 2
+}
+
 items = {
     "lightsaber": item_lightsaber,
-    "powerconverter": item_pc,
+    "powerconverter": item_powerconverter,
     "landspeeder": item_landspeeder,
     "r2d2": item_r2d2,
     "handgun": item_handgun,

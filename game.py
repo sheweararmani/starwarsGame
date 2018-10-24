@@ -235,8 +235,6 @@ def ready_to_play():
 
 # Allow the player to choose a character.
 def choose_character():
-    global inventory, max_mass, current_location, max_health, health
-
     print(r" ________________________     _________________________ ")
     print(r"|        .......         |   |      .x%%%%%%x.         |")
     print(r"|      ::::::;;::.       |   |     ,%%%%%%%%%%%        |")
